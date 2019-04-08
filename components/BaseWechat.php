@@ -428,7 +428,7 @@ abstract class BaseWechat extends Component
      * @param $filePath
      * @return \CURLFile|string
      */
-    protected function uploadFile($filePath)
+    public function uploadFile($filePath)
     {
         // php 5.5将抛弃@写法,引用CURLFile类来实现 @see http://segmentfault.com/a/1190000000725185
         return class_exists('\CURLFile') ? new \CURLFile($filePath) : '@' . $filePath;

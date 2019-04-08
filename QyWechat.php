@@ -44,6 +44,53 @@ class QyWechat extends BaseWechat
     /* =================== 建立连接 =================== */
 
     /**
+     * 获取缓存键值
+     * @param $name
+     * @return string
+     */
+    protected function getCacheKey($name)
+    {
+        return $this->cachePrefix . '_' . $this->appId . '_' . $name;
+    }
+
+    /**
+     * 创建消息加密类
+     * @return object
+     */
+    protected function createMessageCrypt()
+    {
+        return Yii::createObject(MessageCrypt::className(), [$this->token, $this->encodingAesKey, $this->appId]);
+    }
+
+    /**
+     * @inheritdoc
+     * @param bool $force 是否强制获取access_token, 该设置会在access_token使用错误时, 是否再获取一次access_token并再重新提交请求
+     */
+    public function parseHttpRequest(callable $callable, $url, $postOptions = null, $force = true)
+    {
+        $result = call_user_func_array($callable, [$url, $postOptions]);
+        if (isset($result['errcode']) && $result['errcode']) {
+            $this->lastError = $result;
+            Yii::warning([
+                'url' => $url,
+                'result' => $result,
+                'postOptions' => $postOptions
+            ], __METHOD__);
+            switch ($result ['errcode']) {
+                case 40001: //access_token 失效,强制更新access_token, 并更新地址重新执行请求
+                    if ($force) {
+                        $url = preg_replace_callback("/access_token=([^&]*)/i", function(){
+                            return 'access_token=' . $this->getAccessToken(true);
+                        }, $url);
+                        $result = $this->parseHttpRequest($callable, $url, $postOptions, false); // 仅重新获取一次,否则容易死循环
+                    }
+                    break;
+            }
+        }
+        return $result;
+    }
+
+    /**
      * access token获取
      */
     const WECHAT_ACCESS_TOKEN_PREFIX = '/cgi-bin/token';

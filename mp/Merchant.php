@@ -1,11 +1,11 @@
 <?php
 namespace c4ys\wechat\sdk\mp;
 
-use callmez\wechat\sdk\components\WechatComponent;
+use c4ys\wechat\sdk\components\WechatComponent;
 
 /**
  * 微信小店组件
- * @package callmez\wechat\sdk\components\mp
+ * @package c4ys\wechat\sdk\components\mp
  */
 class Merchant extends WechatComponent
 {

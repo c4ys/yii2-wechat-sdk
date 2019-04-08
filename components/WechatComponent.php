@@ -5,7 +5,7 @@ use yii\base\Object;
 
 /**
  * 微信
- * @package callmez\wechat\sdk\components
+ * @package c4ys\wechat\sdk\components
  */
 class WechatComponent extends Object
 {

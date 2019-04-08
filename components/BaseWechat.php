@@ -13,7 +13,7 @@ use yii\base\InvalidParamException;
 /**
  * 微信SDK操作基类
  *
- * @package callmez\wechat\sdk
+ * @package c4ys\wechat\sdk
  */
 abstract class BaseWechat extends Component
 {

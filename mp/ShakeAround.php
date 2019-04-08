@@ -1,11 +1,11 @@
 <?php
 namespace c4ys\wechat\sdk\mp;
 
-use callmez\wechat\sdk\components\WechatComponent;
+use c4ys\wechat\sdk\components\WechatComponent;
 
 /**
  * 摇一摇周边
- * @package callmez\wechat\components\mp
+ * @package c4ys\wechat\components\mp
  */
 class ShakeAround extends WechatComponent
 {

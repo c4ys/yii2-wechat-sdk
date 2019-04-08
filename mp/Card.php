@@ -1,11 +1,11 @@
 <?php
 namespace c4ys\wechat\sdk\mp;
 
-use callmez\wechat\sdk\components\WechatComponent;
+use c4ys\wechat\sdk\components\WechatComponent;
 
 /**
  * 卡卷组件(文档v2.0)
- * @package callmez\wechat\sdk\components\mp
+ * @package c4ys\wechat\sdk\components\mp
  */
 class Card extends WechatComponent
 {

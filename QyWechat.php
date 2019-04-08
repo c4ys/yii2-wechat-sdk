@@ -1,7 +1,7 @@
 <?php
 namespace c4ys\wechat\sdk;
 
-use callmez\wechat\sdk\components\BaseWechat;
+use c4ys\wechat\sdk\components\BaseWechat;
 
 /**
  * 微信企业号操作SDK

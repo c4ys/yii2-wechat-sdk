@@ -5,9 +5,9 @@
     "keywords": ["yii2", "wechat", "weixin", "sdk"],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/callmez/yii2-wechat-sdk/issues",
-        "wiki": "https://github.com/callmez/yii2-wechat-sdk/wiki",
-        "source": "https://github.com/callmez/yii2-wechat-sdk"
+        "issues": "https://github.com/c4ys/yii2-wechat-sdk/issues",
+        "wiki": "https://github.com/c4ys/yii2-wechat-sdk/wiki",
+        "source": "https://github.com/c4ys/yii2-wechat-sdk"
     },
     "authors": [
         {
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "callmez\\wechat\\sdk\\": ""
+            "c4ys\\wechat\\sdk\\": ""
         }
     }
 }

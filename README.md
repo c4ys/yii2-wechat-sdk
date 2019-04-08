@@ -3,7 +3,7 @@ yii2-wechat-sdk
 
 感谢选择 yii2-wechat-sdk 扩展, 该扩展是基于[Yii2](https://github.com/yiisoft/yii2)框架基础开发,借助Yii2的强劲特性可以定制开发属于您自己的微信公众号
 
-[![Latest Stable Version](https://poser.pugx.org/callmez/yii2-wechat-sdk/v/stable.svg)](https://packagist.org/packages/callmez/yii2-wechat-sdk) [![Total Downloads](https://poser.pugx.org/callmez/yii2-wechat-sdk/downloads.svg)](https://packagist.org/packages/callmez/yii2-wechat-sdk) [![Latest Unstable Version](https://poser.pugx.org/callmez/yii2-wechat-sdk/v/unstable.svg)](https://packagist.org/packages/callmez/yii2-wechat-sdk) [![License](https://poser.pugx.org/callmez/yii2-wechat-sdk/license.svg)](https://packagist.org/packages/callmez/yii2-wechat-sdk)
+[![Latest Stable Version](https://poser.pugx.org/c4ys/yii2-wechat-sdk/v/stable.svg)](https://packagist.org/packages/c4ys/yii2-wechat-sdk) [![Total Downloads](https://poser.pugx.org/c4ys/yii2-wechat-sdk/downloads.svg)](https://packagist.org/packages/c4ys/yii2-wechat-sdk) [![Latest Unstable Version](https://poser.pugx.org/c4ys/yii2-wechat-sdk/v/unstable.svg)](https://packagist.org/packages/c4ys/yii2-wechat-sdk) [![License](https://poser.pugx.org/c4ys/yii2-wechat-sdk/license.svg)](https://packagist.org/packages/c4ys/yii2-wechat-sdk)
 
 注意
 ---
@@ -16,7 +16,7 @@ yii2-wechat-sdk
 
 环境条件
 --------
-- >= php5.4
+- PHP >= 7.0
 - Yii2
 
 安装
@@ -26,11 +26,24 @@ yii2-wechat-sdk
 
 ```json
 {
+      "repositories": [
+        {
+          "url": "https://github.com/c4ys/yii2-wechat-sdk.git",
+          "type": "vcs"
+        }
+      ]
+}
+```
+
+```json
+{
     "require": {
-       "callmez/yii2-wechat-sdk": "dev-master"
+       "c4ys/yii2-wechat-sdk": "dev-master"
     }
 }
 ```
+
+然后运行 composer update
 
 使用示例
 --------
@@ -42,7 +55,7 @@ Wechat定义方式
 'components' => [
   .....
   'wechat' => [
-    'class' => 'callmez\wechat\sdk\Wechat',
+    'class' => 'c4ys\wechat\sdk\Wechat',
     'appId' => '微信公众平台中的appid',
     'appSecret' => '微信公众平台中的secret',
     'token' => '微信服务器对接您的服务器验证token'
@@ -55,7 +68,7 @@ $wechat = Yii::$app->wechat;
 
 //多公众号使用方式
 $wechat = Yii::createObject([
-    'class' => 'callmez\wechat\sdk\Wechat',
+    'class' => 'c4ys\wechat\sdk\Wechat',
     'appId' => '微信公众平台中的appid',
     'appSecret' => '微信公众平台中的secret',
     'token' => '微信服务器对接您的服务器验证token'
@@ -122,7 +135,7 @@ echo $wechat->getMedia($media['media_id']) ? 'media下载成功' : 'media下载�
 
 反馈或贡献代码
 --------------
-您可以在[这里](https://github.com/callmez/yii2-wechat-sdk/issues)给我提出在使用中碰到的问题或Bug.
+您可以在[这里](https://github.com/c4ys/yii2-wechat-sdk/issues)给我提出在使用中碰到的问题或Bug.
 我会在第一时间回复您并修复.
 
 您也可以 发送邮件callme-z@qq.com给我并且说明您的问题.

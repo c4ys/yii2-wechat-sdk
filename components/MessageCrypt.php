@@ -1,5 +1,5 @@
 <?php
-namespace callmez\wechat\sdk\components;
+namespace c4ys\wechat\sdk\components;
 
 require_once 'messageCrypt/wxBizMsgCrypt.php';
 

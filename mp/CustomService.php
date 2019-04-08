@@ -1,5 +1,5 @@
 <?php
-namespace callmez\wechat\sdk\mp;
+namespace c4ys\wechat\sdk\mp;
 
 use callmez\wechat\sdk\components\WechatComponent;
 

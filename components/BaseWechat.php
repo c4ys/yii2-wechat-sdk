@@ -151,12 +151,6 @@ abstract class BaseWechat extends Component
     }
 
     /**
-     * 创建消息加密类
-     * @return mixed
-     */
-    abstract protected function createMessageCrypt();
-
-    /**
      * 设置消息加密处理类
      * @return MessageCrypt
      */
@@ -275,12 +269,6 @@ abstract class BaseWechat extends Component
         }
     }
 
-    /**
-     * 微信数据缓存基本键值
-     * @param $name
-     * @return string
-     */
-    abstract protected function getCacheKey($name);
 
     /**
      * 缓存微信数据
@@ -380,14 +368,6 @@ abstract class BaseWechat extends Component
         }, $this->httpBuildQuery($url, $options), $postOptions);
     }
 
-    /**
-     * 解析微信请求响应内容
-     * @param callable $callable Http请求主体函数
-     * @param string $url Api地址
-     * @param array|string|null $postOptions Api地址一般所需要的post参数
-     * @return array|bool
-     */
-    abstract public function parseHttpRequest(callable $callable, $url, $postOptions = null);
 
     /**
      * Http基础库 使用该库请求微信服务器
